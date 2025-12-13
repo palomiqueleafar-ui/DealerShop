@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;  
 
@@ -25,12 +17,6 @@ namespace DealerShop
             txtPassword.UseSystemPasswordChar = true;
         
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void login_btn_Click(object sender, EventArgs e)
         {
             try
@@ -52,10 +38,26 @@ namespace DealerShop
 
                     MessageBox.Show("Login Successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                   
-                    Admin_DashBoard dashboard = new Admin_DashBoard(role);
-                    dashboard.Show();
-                    this.Hide();
+
+                    if (role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // 1. If the role is Admin, open the Admin Dashboard
+                        Admin_DashBoard dashboard = new Admin_DashBoard(role); 
+                        dashboard.Show();
+                        this.Hide();
+                    }
+                    else if (role.Equals("Cashier", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // 2. If the role is Cashier, open the Cashier Form
+                        frmCashier cashier = new frmCashier();
+                        cashier.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        // Handle any other unexpected roles
+                        MessageBox.Show("Login successful, but unauthorized role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -70,11 +72,6 @@ namespace DealerShop
                 MessageBox.Show(ex.Message);
                 cn.Close();
             }
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }      
 }

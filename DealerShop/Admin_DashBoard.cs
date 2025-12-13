@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DealerShop
@@ -16,28 +9,52 @@ namespace DealerShop
         public Admin_DashBoard(string userRole)
         {
             InitializeComponent();
+           
             this.userRole = userRole;
         }
 
-        private void Admin_DashBoard_Load(object sender, EventArgs e)
+        private void ShowUserControl(UserControl userControl)
         {
+            adminPanel.Controls.Clear();
+            userControl.Dock = DockStyle.Fill;
+            adminPanel.Controls.Add(userControl);
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmCashier cashier = new frmCashier();
+            cashier.Show();
+            this.Hide();
+        }
 
+        private void dash_btn_Click(object sender, EventArgs e)
+        {
+            frmDashboard dashboardControl = new frmDashboard();
+            ShowUserControl(dashboardControl);
+        }
+
+        private void inventory_btn_Click_1(object sender, EventArgs e)
+        {
+            frmInventory inventoryControl = new frmInventory();
+            ShowUserControl(inventoryControl);
+        }
+
+        private void btn_Transaction_Click(object sender, EventArgs e)
+        {
+            Sales trasanctionControl = new Sales();
+            ShowUserControl(trasanctionControl);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to log out?", "Logout",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Form1 login = new Form1(); 
+                login.Show();
+                this.Hide();
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void inventory_btn_Click(object sender, EventArgs e)
-        {
-            Inverntory_System inventoryForm = new Inverntory_System();
-            inventoryForm.Show();
-        }
     }
 }
