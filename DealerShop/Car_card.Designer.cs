@@ -28,93 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Car_card));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label_carName = new CuoreUI.Controls.cuiLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label_price = new CuoreUI.Controls.cuiLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Price = new System.Windows.Forms.Label();
-            this.CarName = new System.Windows.Forms.Label();
-            this.addToCart_btn = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label_carName);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label_price);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 36);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 135);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(337, 257);
+            this.panel1.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(265, 210);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(68, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label_carName
+            // 
+            this.label_carName.Content = "CarName";
+            this.label_carName.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_carName.ForeColor = System.Drawing.Color.White;
+            this.label_carName.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.label_carName.Location = new System.Drawing.Point(4, 14);
+            this.label_carName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label_carName.Name = "label_carName";
+            this.label_carName.Size = new System.Drawing.Size(228, 20);
+            this.label_carName.TabIndex = 11;
+            this.label_carName.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(7, 223);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "₱";
+            // 
+            // label_price
+            // 
+            this.label_price.Content = "0\\.0";
+            this.label_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_price.ForeColor = System.Drawing.Color.White;
+            this.label_price.HorizontalAlignment = System.Drawing.StringAlignment.Near;
+            this.label_price.Location = new System.Drawing.Point(29, 228);
+            this.label_price.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label_price.Name = "label_price";
+            this.label_price.Size = new System.Drawing.Size(228, 20);
+            this.label_price.TabIndex = 8;
+            this.label_price.VerticalAlignment = System.Drawing.StringAlignment.Center;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(259, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(333, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // Price
-            // 
-            this.Price.AutoSize = true;
-            this.Price.Font = new System.Drawing.Font("OCR A Extended", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Price.Location = new System.Drawing.Point(9, 168);
-            this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(64, 19);
-            this.Price.TabIndex = 2;
-            this.Price.Text = "Price";
-            // 
-            // CarName
-            // 
-            this.CarName.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CarName.Location = new System.Drawing.Point(9, 11);
-            this.CarName.Name = "CarName";
-            this.CarName.Size = new System.Drawing.Size(247, 22);
-            this.CarName.TabIndex = 3;
-            this.CarName.Text = "CarName";
-            // 
-            // addToCart_btn
-            // 
-            this.addToCart_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addToCart_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.addToCart_btn.Depth = 0;
-            this.addToCart_btn.HighEmphasis = true;
-            this.addToCart_btn.Icon = null;
-            this.addToCart_btn.Location = new System.Drawing.Point(191, 161);
-            this.addToCart_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.addToCart_btn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.addToCart_btn.Name = "addToCart_btn";
-            this.addToCart_btn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.addToCart_btn.Size = new System.Drawing.Size(64, 36);
-            this.addToCart_btn.TabIndex = 4;
-            this.addToCart_btn.Text = "ADD";
-            this.addToCart_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.addToCart_btn.UseAccentColor = false;
-            this.addToCart_btn.UseVisualStyleBackColor = true;
             // 
             // Car_card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.addToCart_btn);
-            this.Controls.Add(this.CarName);
-            this.Controls.Add(this.Price);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Car_card";
-            this.Size = new System.Drawing.Size(259, 203);
+            this.Size = new System.Drawing.Size(337, 257);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Price;
-        private System.Windows.Forms.Label CarName;
-        private MaterialSkin.Controls.MaterialButton addToCart_btn;
+        private CuoreUI.Controls.cuiLabel label_price;
+        private System.Windows.Forms.Label label3;
+        private CuoreUI.Controls.cuiLabel label_carName;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

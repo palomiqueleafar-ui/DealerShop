@@ -66,12 +66,6 @@ namespace DealerShop
                     );
 
                     // 3. Low Stock Alert Logic (Optional, based on your previous example)
-                    int quantity = Convert.ToInt32(dr["prod_quantity"]);
-                    if (quantity <= 5) // Set your threshold here
-                    {
-                        // Highlight the row if the quantity is low
-                        dataGridView1.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 200);
-                    }
                 }
 
                 dr.Close();
@@ -124,7 +118,7 @@ namespace DealerShop
                         if (cn.State == ConnectionState.Closed)
                             cn.Open();
 
-                        // SQL Command: DELETE FROM products WHERE id = @id (Using 'id' as per your schema)
+                       
                         cm = new MySqlCommand("DELETE FROM products WHERE id = @id", cn);
                         cm.Parameters.Clear();
                         cm.Parameters.AddWithValue("@id", productId);

@@ -1,6 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;  
+using System;
+using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;  
 
 namespace DealerShop
 {
@@ -15,7 +16,8 @@ namespace DealerShop
             cn = new MySqlConnection(dbcon.MyConnection());
 
             txtPassword.UseSystemPasswordChar = true;
-        
+            this.StartPosition = FormStartPosition.CenterScreen;
+
         }
         private void login_btn_Click(object sender, EventArgs e)
         {
@@ -34,6 +36,7 @@ namespace DealerShop
 
                 if (dr.Read())
                 {
+                    int cashierId = Convert.ToInt32(dr["id"]);
                     string role = dr["role"].ToString();
 
                     MessageBox.Show("Login Successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -49,7 +52,7 @@ namespace DealerShop
                     else if (role.Equals("Cashier", StringComparison.OrdinalIgnoreCase))
                     {
                         // 2. If the role is Cashier, open the Cashier Form
-                        frmCashier cashier = new frmCashier();
+                        frmCashier cashier = new frmCashier(cashierId);
                         cashier.Show();
                         this.Hide();
                     }
@@ -72,6 +75,17 @@ namespace DealerShop
                 MessageBox.Show(ex.Message);
                 cn.Close();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(170, 23, 42, 55);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Application.Exit();
         }
     }      
 }

@@ -9,7 +9,7 @@ namespace DealerShop
         public Admin_DashBoard(string userRole)
         {
             InitializeComponent();
-           
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.userRole = userRole;
         }
 
@@ -19,12 +19,7 @@ namespace DealerShop
             userControl.Dock = DockStyle.Fill;
             adminPanel.Controls.Add(userControl);
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            frmCashier cashier = new frmCashier();
-            cashier.Show();
-            this.Hide();
-        }
+
 
         private void dash_btn_Click(object sender, EventArgs e)
         {
@@ -54,7 +49,5 @@ namespace DealerShop
                 this.Hide();
             }
         }
-
-
     }
 }
