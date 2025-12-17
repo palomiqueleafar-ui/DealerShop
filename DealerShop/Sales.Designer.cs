@@ -97,7 +97,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1176, 650);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -109,7 +108,6 @@
             this.label1.Size = new System.Drawing.Size(285, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "TRANSACTIONS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Column1
             // 
@@ -177,7 +175,6 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Sales";
             this.Size = new System.Drawing.Size(1213, 741);
-            this.Load += new System.EventHandler(this.Sales_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

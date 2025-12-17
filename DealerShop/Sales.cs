@@ -31,9 +31,6 @@ namespace DealerShop
             {
                 cn = new MySqlConnection(dbcon.MyConnection());
                 cn.Open();
-
-                // REVISED QUERY: Joins transactions (t), users (u), transaction_items (ti), and products (p)
-                // to get the full sale details and the car name.
                 string query = @"
             SELECT 
                 t.transaction_id,
@@ -57,12 +54,12 @@ namespace DealerShop
                 {
                     dataGridView1.Rows.Add(
                         dr["transaction_id"].ToString(),
-                        dr["car_name"].ToString(),           // Using the concatenated car name
+                        dr["car_name"].ToString(),           
                         dr["total"].ToString(),
-                        dr["payment_received"].ToString(),   // Using the correct column
-                        dr["change_due"].ToString(),         // Using the correct column
+                        dr["payment_received"].ToString(),   
+                        dr["change_due"].ToString(),       
                         dr["cashier_name"].ToString(),
-                        dr["date_sold"].ToString()           // Using the correct column
+                        dr["date_sold"].ToString()          
                     );
                 }
                 dr.Close();
@@ -75,25 +72,6 @@ namespace DealerShop
             {
                 if (cn.State == ConnectionState.Open) cn.Close();
             }
-        }
-
-
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Sales_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
